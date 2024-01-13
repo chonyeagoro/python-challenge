@@ -9,7 +9,6 @@ total_profit = 0
 profit_changes = []
 total_change = 0
 prev_loss = 0 
-dates = []
 greatest_increase = ["", 0]
 greatest_decrease = ["", 90]
 
