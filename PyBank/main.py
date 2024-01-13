@@ -14,7 +14,11 @@ greatest_decrease = ["", 90]
 
 #open and read csv file 
 with open(pybank) as bank_file:
+
+    #Store the dat in the csv_reader variable
     csv_reader = csv.reader(bank_file, delimiter=',')
+
+    # Skip the header so we can go through the actual values
     header = next(csv_reader)
     #set values in header row
     first_row = next(csv_reader)
