@@ -9,13 +9,16 @@ total_profit = 0
 profit_changes = []
 total_change = 0
 prev_loss = 0 
-dates = []
 greatest_increase = ["", 0]
 greatest_decrease = ["", 90]
 
 #open and read csv file 
 with open(pybank) as bank_file:
+
+    #Store the dat in the csv_reader variable
     csv_reader = csv.reader(bank_file, delimiter=',')
+
+    # Skip the header so we can go through the actual values
     header = next(csv_reader)
     #set values in header row
     first_row = next(csv_reader)
@@ -56,7 +59,7 @@ with open(pybank) as bank_file:
             greatest_decrease[0] = row[0]
             greatest_decrease[1] = profit_change
 
-
+#Print results
 print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + str(total_months))
