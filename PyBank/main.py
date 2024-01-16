@@ -39,7 +39,6 @@ with open(pybank) as bank_file:
 
         # add profit change to list 
         profit_changes.append(profit_change)
-        dates.append(row[0])
 
 
         # reset prev_profit to the current profit  
