@@ -1,4 +1,5 @@
 import csv
+import os
 
 #Set a path for the csv file 
 pypoll = "PyPoll/Resources/election_data.csv"
@@ -34,6 +35,7 @@ winning_count = candidates_votes[winner]
 
 
 #Print Results 
+
 print("Election Results")
 print("-------------------------")
 print("Total Votes: " + str(total_votes))
@@ -45,5 +47,18 @@ for candidate, votes in candidates_votes.items():
     print(voter_output)
 # Print the winning candidate
 print("-------------------------")
-print(winner)
+print("Winner: " + str(winner))
 print("-------------------------")
+
+output = (f"Election Results\n"
+          f"----------------------------\n"
+          f"Total Votes:  {total_votes}\n"
+          f"-------------------------\n"
+          f"{voter_output}\n"
+          f"-------------------------\n"
+          f"Winner: {winner}\n"
+          f"-------------------------")
+
+file_to_output = "/Users/sybilonyeagoro/Documents/python-challenge/PyPoll/analysis/Poll.txt"
+with open(file_to_output, "w") as txt_file:
+     txt_file.write(output)
