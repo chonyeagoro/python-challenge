@@ -51,11 +51,16 @@ print("Winner: " + str(winner))
 print("-------------------------")
 
 #store variable and print into text file
+voter_output_merge = []
+for candidate, votes in candidates_votes.items():
+    vote_percentage = votes / total_votes * 100
+    voter_output = f"{candidate}: {vote_percentage:.3f}% ({votes})"
+    voter_output_merge.append(voter_output)
 output = (f"Election Results\n"
           f"----------------------------\n"
           f"Total Votes:  {total_votes}\n"
           f"-------------------------\n"
-          f"{voter_output}\n"
+          f"{voter_output_merge}\n"
           f"-------------------------\n"
           f"Winner: {winner}\n"
           f"-------------------------")
