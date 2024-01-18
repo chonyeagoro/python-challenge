@@ -50,6 +50,7 @@ print("-------------------------")
 print("Winner: " + str(winner))
 print("-------------------------")
 
+#store variable and print into text file
 output = (f"Election Results\n"
           f"----------------------------\n"
           f"Total Votes:  {total_votes}\n"
