@@ -1,4 +1,5 @@
 import csv
+import os
 
 #Set a path for the csv file 
 pybank = "PyBank/Resources/budget_data.csv"
@@ -39,7 +40,6 @@ with open(pybank) as bank_file:
 
         # add profit change to list 
         profit_changes.append(profit_change)
-        dates.append(row[0])
 
 
         # reset prev_profit to the current profit  
@@ -60,6 +60,14 @@ with open(pybank) as bank_file:
             greatest_decrease[1] = profit_change
 
 #Print results
+output = (f"Financial Analysis\n"
+          f"----------------------------\n"
+          f"Total Months: {total_months}\n"
+          f"Total: ${total_profit}\n"
+          f"Average Change: ${avg:.2f}\n"
+          f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})\n"
+          f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")
+
 print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + str(total_months))
@@ -68,3 +76,7 @@ print("Average Change: $" + str(avg))
 print("Greatest Increase in Profits: " + str(greatest_increase[0])+ " (" + str(greatest_increase[1]) + ")")
 print("Greatest Decrease in Profits: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
 
+# output.to_csv('/Users/sybilonyeagoro/Documents/python-challenge/PyBank/analysis/Bank.txt', header=None, index=None, sep=' ')
+file_to_output = "/Users/sybilonyeagoro/Documents/python-challenge/PyBank/analysis/Bank.txt"
+with open(file_to_output, "w") as txt_file:
+     txt_file.write(output)
