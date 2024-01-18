@@ -76,7 +76,7 @@ print("Average Change: $" + str(avg))
 print("Greatest Increase in Profits: " + str(greatest_increase[0])+ " (" + str(greatest_increase[1]) + ")")
 print("Greatest Decrease in Profits: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
 
-# output.to_csv('/Users/sybilonyeagoro/Documents/python-challenge/PyBank/analysis/Bank.txt', header=None, index=None, sep=' ')
+#store variable and print into text file
 file_to_output = "/Users/sybilonyeagoro/Documents/python-challenge/PyBank/analysis/Bank.txt"
 with open(file_to_output, "w") as txt_file:
      txt_file.write(output)
